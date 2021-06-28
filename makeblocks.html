@@ -12,40 +12,27 @@
     <script type="text/jsx">
     
       const QrCodeTest = () => {
-      const [qrInput, setQrInput] = useState("");
-      const [qrContent, setQrContent] = useState("");
+        const [qrInput, setQrInput] = React.useState("");
+        const [qrContent, setQrContent] = React.useState("");
 
-      async function onSubmit() {
-        setQrContent(qrInput);
-      }
+        async function onSubmit() {
+          setQrContent(qrInput);
+        }
 
-      return (
-        <div>
-          <form>
-            <textarea value={qrInput} onChange={(e) => setQrInput(e.target.value)} />
-            <br />
-            <button type="button" onClick={() => onSubmit()}>
-              QRCodify this content
-            </button>
-          </form>
-          <hr />
-          <QRCode value={qrContent} />
-        </div>
-      );
-    };    
-      
-      
-      
-      
-      /*
-      const App = () => {
         return (
           <div>
-            <h1>Hello, React!</h1>
+            <form>
+              <textarea value={qrInput} onChange={(e) => setQrInput(e.target.value)} />
+              <br />
+              <button type="button" onClick={() => onSubmit()}>
+                QRCodify this content
+              </button>
+            </form>
+            <hr />
+            <QRCode value={qrContent} />
           </div>
         );
-      };
-      */
+      };    
       
       ReactDOM.render(<QrCodeTest />, document.getElementById("root"));
     </script>
